@@ -1,3 +1,10 @@
+/*
+ * 修订ace-diff源码，使其符合猛犸交互要求
+ * @Author: menger88(1158584767@qq.com)
+ * @Date: 2018-05-11 15:02:49
+ * @Last Modified by: jessica(hzgujing@corp.netease.com)
+ * @Last Modified time: 2018-05-11 15:03:45
+ */
 import ace from 'brace'; // eslint-disable-line
 import merge from 'lodash/merge';
 import debounce from 'lodash/debounce';
