@@ -3,7 +3,7 @@
  * @Author: menger88(1158584767@qq.com)
  * @Date: 2018-05-11 15:02:49
  * @Last Modified by: jessica(hzgujing@corp.netease.com)
- * @Last Modified time: 2018-05-11 15:03:45
+ * @Last Modified time: 2018-05-11 15:10:46
  */
 import ace from 'brace'; // eslint-disable-line
 import merge from 'lodash/merge';
@@ -243,7 +243,9 @@ AceDiff.prototype = {
     newDiv.textContent = rightValue;
     oldDiv.parentNode.replaceChild(newDiv, oldDiv);
 
-    document.getElementById(this.options.classes.gutterID).innerHTML = '';
+    if (document.getElementById(this.options.classes.gutterID)) {
+      document.getElementById(this.options.classes.gutterID).innerHTML = '';
+    }
   },
 };
 
