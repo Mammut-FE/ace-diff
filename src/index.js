@@ -3,7 +3,7 @@
  * @Author: menger88(1158584767@qq.com)
  * @Date: 2018-05-11 15:02:49
  * @Last Modified by: jessica(hzgujing@corp.netease.com)
- * @Last Modified time: 2018-05-11 15:10:46
+ * @Last Modified time: 2018-05-11 16:43:13
  */
 import ace from 'brace'; // eslint-disable-line
 import merge from 'lodash/merge';
@@ -121,8 +121,12 @@ function AceDiff(options) {
 
 
   // 融合其他选项
-  this.editors.left.ace.setOptions(this.options.left.options);
-  this.editors.right.ace.setOptions(this.options.right.options);
+  if (this.options.left.options) {
+    this.editors.left.ace.setOptions(this.options.left.options);
+  }
+  if (this.options.right.options) {
+    this.editors.right.ace.setOptions(this.options.right.options);
+  }
 
   this.editors.left.ace.renderer.updateFontSize();
   this.editors.right.ace.renderer.updateFontSize();
