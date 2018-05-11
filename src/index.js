@@ -109,7 +109,16 @@ function AceDiff(options) {
   addEventHandlers(this);
 
   // assumption: both editors have same line heights
-  this.lineHeight = this.editors.left.ace.renderer.lineHeight;
+  // this.lineHeight = this.editors.left.ace.renderer.lineHeight;
+  this.lineHeight = 24; // 由于无法检测到编辑器后面设置的属性的变化，因此这里对应猛犸需求先写死
+
+
+  // 融合其他选项
+  this.editors.left.ace.setOptions(this.options.left.options);
+  this.editors.right.ace.setOptions(this.options.right.options);
+
+  this.editors.left.ace.renderer.updateFontSize();
+  this.editors.right.ace.renderer.updateFontSize();
 
   // set up the editors
   this.editors.left.ace.getSession().setMode(getMode(this, C.EDITOR_LEFT));
