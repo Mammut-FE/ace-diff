@@ -428,9 +428,9 @@ function addConnector(acediff, leftStartLine, leftEndLine, rightStartLine, right
   const p2_x = acediff.gutterWidth + 1;
   const p2_y = rightStartLine * acediff.lineHeight - rightScrollTop + 0.5;
   const p3_x = -1;
-  const p3_y = (leftEndLine * acediff.lineHeight) - leftScrollTop + acediff.connectorYOffset + 0.5;
+  const p3_y = (leftEndLine * acediff.lineHeight) - leftScrollTop + acediff.connectorYOffset - 1;
   const p4_x = acediff.gutterWidth + 1;
-  const p4_y = (rightEndLine * acediff.lineHeight) - rightScrollTop + acediff.connectorYOffset + 0.5;
+  const p4_y = (rightEndLine * acediff.lineHeight) - rightScrollTop + acediff.connectorYOffset - 1;
   const curve1 = getCurve(p1_x, p1_y, p2_x, p2_y);
   const curve2 = getCurve(p4_x, p4_y, p3_x, p3_y);
 
